@@ -1,0 +1,55 @@
+/* #pageFooter{
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+} */
+
+#listItem{
+    background-color: #F9B500!important;
+    align-content: center;
+}
+
+#logo{
+    border-radius: 50%;
+    width: 20%;
+}
+
+#temp{
+    float: right;
+}
+
+.serif {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.pagination {
+  display: inline-block;
+  text-align: center;
+}
+  
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+.list-btm-border-white  li {
+  border-bottom: 1px solid #fff;
+}
+
+.cardStyle {
+  height: 150px;
+    width: 180px;
+}
