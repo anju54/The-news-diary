@@ -16,7 +16,23 @@
 }
 
 #temp{
-    float: right;
+  float: right;
+}
+
+#navOwl{
+  /* float: right; */
+  margin: 0 3px;
+    background: none;
+    border: 1px solid #dedede;
+    color: #999;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0;
+    border-radius: 0;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
 }
 
 .serif {
@@ -52,4 +68,31 @@
 .cardStyle {
   height: 150px;
     width: 180px;
+}
+
+.block-title{
+  border-bottom: 2px solid #ec0000;
+  font-size: 14px;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin: 0 0 40px;
+}
+
+h3{
+  color: #1c1c1c;
+    font-weight: 700;
+    font-family: 'Arimo', sans-serif;
+}
+
+.color-red .block-title > span, .color-red a.post-cat {
+  background: #ec0000;
+  font-weight:bold ;
+}
+.block-title span {
+  background: #610707;
+  color: #fff;
+  height: 30px;
+  line-height: 30px;
+  padding: 8px 15px;
+  position: relative;
 }

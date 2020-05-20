@@ -11,9 +11,10 @@ function RecentNews(){
 
     return(
         <Col md="6">
-        <h3 className="p-title">
-          Recent News
-          <i className="fa fa-plus" aria-hidden="true" id="temp"></i>
+        <h3 className="block-title">
+          <span>Recent News</span>
+          
+          {/* <i className="fa fa-plus" aria-hidden="true" id="temp"></i> */}
         </h3>
         {/* <a href="#" class="control"><i class="fa fa-plus"></i></a> */}
         <Row>

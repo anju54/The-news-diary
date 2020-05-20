@@ -7,9 +7,9 @@ import {
   function Category(){
     return(
         <Col xs="3">
-            <h6 className="p-title">
-                Categories
-            </h6>
+            <h3 className="block-title">
+                <span>Category</span>
+            </h3>
             <ul className="list-block list-li-ptb-15 list-btm-border-white bg-primary text-center" id="listItem">
             <li><b>All</b></li>
             <li><b>Technology</b></li>
