@@ -2,15 +2,18 @@ import React, { useEffect, useState } from 'react';
 import CardLayout from '../Index/CardForCategory';
 import { Row } from 'reactstrap';
 import CardHeader from '../Index/CardHeading';
+import Constants from '../Util/Constants';
 
+/**
+ * This is used fot fetching world related news
+ */
 function WorldNews(){
 
   const [worldNews,setWorldNews] = useState([]);
-    
-  useEffect( () => {
 
-    let category = "world"
-    const response = fetch(`http://localhost:8085/news/${category}`, {
+  const fetchWorldNews = () => {
+    let pageNum = 1;
+    const response = fetch(`${Constants.BASEURL}/news/world/${pageNum}`, {
       method: "GET",
       cache: "no-cache",
       headers: { "Content-Type": "application/json" },
@@ -22,6 +25,11 @@ function WorldNews(){
           let error = response.status;
           throw error;}
     }).then( object => setWorldNews(object) );
+  }
+    
+  useEffect( () => {
+    fetchWorldNews();
+    
   }, []);
 
   return(
