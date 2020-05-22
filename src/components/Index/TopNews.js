@@ -4,14 +4,19 @@ import {
     Container
   } from 'reactstrap';
 import CardLayout from '../Index/Card';
+import Constants from '../Util/Constants';
 
 function TopNews(){
 
   const [topNews,setTopNews] = useState([]);
 
   useEffect( () => {
+    fetchTopNews(); 
+  },[]);
 
-    const response = fetch(`http://localhost:8085/news/top-news`, {
+  let fetchTopNews = () => {
+    let pageNum = 1;
+    const response = fetch(`${Constants.BASEURL}/news/top-news/${pageNum}`, {
       method: "GET",
       cache: "no-cache",
       headers: { "Content-Type": "application/json" },
@@ -22,9 +27,8 @@ function TopNews(){
         }else{
           let error = response.status;
           throw error;}
-      }).then( object => setTopNews(object) );
-
-  },[]);
+    }).then( object => setTopNews(object) );
+  }
 
   return(
     <div>
@@ -32,12 +36,8 @@ function TopNews(){
         <Row>
           {topNews.map(news =><CardLayout topNews={news} /> )}
         </Row>
-     
       </Container>
-      
     </div>
-    
-
   )
 }
 

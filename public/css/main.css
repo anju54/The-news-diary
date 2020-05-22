@@ -15,26 +15,6 @@
     width: 20%;
 }
 
-#temp{
-  float: right;
-}
-
-#navOwl{
-  /* float: right; */
-  margin: 0 3px;
-    background: none;
-    border: 1px solid #dedede;
-    color: #999;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    padding: 0;
-    border-radius: 0;
-    display: inline-block;
-    text-align: center;
-    font-size: 12px;
-}
-
 .serif {
   font-family: "Times New Roman", Times, serif;
 }
@@ -68,6 +48,11 @@
 .cardStyle {
   height: 150px;
     width: 180px;
+}
+
+.topNewsCard{
+  height: 300px;
+  width: 350px;
 }
 
 .block-title{

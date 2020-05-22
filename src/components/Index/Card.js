@@ -13,7 +13,7 @@ function CardLayout(props){
     return(
         
         <Col xs="4" className ="mt-10 mb-10" >
-            <Card>
+            <Card className="topNewsCard">
                 <CardImg top src={props.topNews.pic_src} alt=""></CardImg>
                 <CardBody>
                     <a href={props.topNews.link}>
