@@ -5,7 +5,6 @@ import {
 import TopNews from '../Index/TopNews';
 import RecentNews from '../Index/RecentNews';
 import Category from '../Index/Category';
-import CategoryNews from '../Index/CategoryNews';
 import RssProviders from '../Index/RssProviders';
 
 function Home(props){
@@ -23,7 +22,7 @@ function Home(props){
         </Row>
       </div>
       <br></br> 
-      <CategoryNews />
+      {/* <CategoryNews /> */}
     </div> 
   )
 

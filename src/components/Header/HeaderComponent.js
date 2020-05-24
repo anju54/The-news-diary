@@ -67,12 +67,12 @@ class Header extends Component{
     render(){
         return(
             <>
-                <Navbar dark expand="md">
+                <Navbar dark expand="md" className="navbarStyle">
                     <Container>
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-auto serif" href="/">
-                            <img src="assets/images/download.png" height="60" width="30"
-                            alt="Resto con fusion" id="logo" />
+                            <img src="assets/images/rss.png" height="50" width="30"
+                            alt="" id="logo" />
                             The-News-Hub
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
@@ -83,8 +83,8 @@ class Header extends Component{
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link serif" to="/aboutus">
-                                    <span className="fa fa-home fa-lg"></span> About us
+                                <NavLink className="nav-link serif" to="/categories">
+                                    <span className="fa fa-list fa-lg"></span> Categories
                                 </NavLink>
                             </NavItem>
                             

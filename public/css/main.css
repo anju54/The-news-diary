@@ -15,6 +15,17 @@
     width: 20%;
 }
 
+#rssImg{
+  border-radius: 50%;
+  border:2px solid #fff;
+  -moz-box-shadow: 0px 6px 5px #ccc;
+  -webkit-box-shadow: 0px 6px 5px #ccc;
+  box-shadow: 0px 6px 5px #ccc;
+  -moz-border-radius:190px;
+  -webkit-border-radius:190px;
+  border-radius:190px;
+}
+
 .serif {
   font-family: "Times New Roman", Times, serif;
 }
@@ -47,7 +58,7 @@
 
 .cardStyle {
   height: 150px;
-    width: 180px;
+  width: 180px;
 }
 
 .topNewsCard{
@@ -58,15 +69,15 @@
 .block-title{
   border-bottom: 2px solid #ec0000;
   font-size: 14px;
-    line-height: 100%;
-    text-transform: uppercase;
-    margin: 0 0 40px;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin: 0 0 40px;
 }
 
 h3{
   color: #1c1c1c;
-    font-weight: 700;
-    font-family: 'Arimo', sans-serif;
+  font-weight: 700;
+  font-family: 'Arimo', sans-serif;
 }
 
 .color-red .block-title > span, .color-red a.post-cat {
@@ -80,4 +91,20 @@ h3{
   line-height: 30px;
   padding: 8px 15px;
   position: relative;
+}
+
+.navbarStyle{
+  height: 50px;
+}
+
+.categoryListStyle{
+  margin-top: 10px;
+}
+
+.cardCol{
+  margin-bottom: 10px;
+}
+
+.newsCard{
+  box-shadow: 10px 10px 50px #ccc;
 }
