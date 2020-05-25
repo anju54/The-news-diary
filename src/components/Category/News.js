@@ -17,9 +17,19 @@ function Categories(){
 
     const fetchRSSNews = (rss) => {
 
-        console.log(rss);
-        //let rss = "sports";
         let pageNum = 1;
+        let picSrcValue = "";
+        if(rss==="Hindustan Times")
+            picSrcValue = "assets/images/ht2.png";
+        if(rss==="India Today")
+            picSrcValue = "assets/images/indiatoday.png";
+        if(rss==="Times Of India")
+            picSrcValue = "assets/images/toi.png"
+        if(rss==="Newyork Times")
+            picSrcValue = "assets/images/newyt.png";
+        if(rss==="The Hindu")
+            picSrcValue = "assets/images/th.png ";
+
         const response = fetch(`${Constants.BASEURL}/news/all/${rss}/${pageNum}`, {
           method: "GET",
           cache: "no-cache",
@@ -32,8 +42,11 @@ function Categories(){
             let error = response.status;
             throw error;}
           }).then( object => {
-            //console.log(object);
+            console.log(object);
+            object.agency_logo = picSrcValue;
+            object.pic_src = picSrcValue;
             setAllNews(object);
+            console.log(object);
         });
       }
     
@@ -57,11 +70,12 @@ function Categories(){
         });
     }
 
-    const fetchCategoryNews = () => {
+    const fetchCategoryNews = (category) => {
 
-        let category = "sports";
+        console.log(category);
+        let pageNum = 1;
 
-        const response = fetch(`${Constants.BASEURL}/news/${category}`, {
+        const response = fetch(`${Constants.BASEURL}/news/${category}/${pageNum}`, {
             method: "GET",
             cache: "no-cache",
             headers: { "Content-Type": "application/json" },
@@ -82,8 +96,8 @@ function Categories(){
         <Container>
             <Row>
                 <Col xs="2" >
-                    <Category onClick={fetchCategoryNews} />
-                    <RssProviders onClick={fetchRSSNews} />
+                    <Category clicked={fetchCategoryNews} />
+                    <RssProviders clicked={fetchRSSNews} />
                 </Col>
                 <Col xs="8" class="d-flex align-items-stretch">
                 { allNews.map( news => <CardLayout props={news} /> )}

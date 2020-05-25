@@ -6,45 +6,26 @@ import {
 import News from '../Category/News';
 import Constants from '../Util/Constants';
 
-  function Category(){
+function Category(props){
 
-    const [categoryNews,setCategoryNews] = useState([]);
-
-    let news =  () => {
-        fetchCategoryNews();
-    }
-
-    const fetchCategoryNews = () => {
-
-        let category = "sports";
-
-        const response = fetch(`${Constants.BASEURL}/news/${category}`, {
-            method: "GET",
-            cache: "no-cache",
-            headers: { "Content-Type": "application/json" },
-            })
-            .then( response => {
-                if(response.ok){
-                return response.json();
-                }else{
-                let error = response.status;
-                throw error;}
-            }).then( object => {
-                //console.log(object);
-                setCategoryNews(object);
-        });
+    function handleCheck(e) {
+        console.log(e.target.id);  
+        props.clicked(e.target.id);
     }
 
     return(
         <Row>
             <Col className="newsCard">
-                <ul className="list-block list-li-ptb-10 list-btm-border-white bg-primary text-center" id="listItem">
-                <li onClick={news}>Categories</li>
-                <li><b>All</b></li>
-                <li><b>Technology</b></li>
-                <li><b>Sports</b></li>
-                <li><b>Top Story</b></li>
-                <li><b>The Big Story</b></li>
+                <ul className="list-block list-li-ptb-10 list-btm-border-white bg-primary text-center" 
+                    id="listItem"
+                    onClick={handleCheck} 
+                >
+                <li className="disabled">Categories</li>
+                <li>All</li>
+                <li id="Technology">Technology</li>
+                <li id="Sports">Sports</li>
+                <li id="Top Stories">Top Story</li>
+                <li id="The Big Story">The Big Story</li>
                 </ul>
             </Col>
         </Row>

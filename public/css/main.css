@@ -108,3 +108,13 @@ h3{
 .newsCard{
   box-shadow: 10px 10px 50px #ccc;
 }
+
+#listItem li{
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.disabled {
+  pointer-events:none;
+  opacity:0.6;
+}

@@ -7,11 +7,12 @@ import {
 function RssProviders(props){
 
   function handleCheck(e) {
-    console.log(e.target);
-    console.log(props);
-    props.fetchRSSNews(e.target);
+    console.log(e.target.id);  
+    props.clicked(e.target.id);
   }
   
+  //document.getElementById("rssTitle").onClick() = function() {return false}
+
   return(
     <Row>
       <Col className="newsCard">
@@ -19,11 +20,12 @@ function RssProviders(props){
           id="listItem"
           onClick={handleCheck}
         >
-        <li>RSS Providers</li>
-        <li id="ht"><b>Hindustan Times</b></li>
-        <li id="toi"><b>The Times Of India</b></li>
-        <li id="id"><b>India Today</b></li>
-        <li id="nt"><b>Newyork Times</b></li>
+        <li className="disabled" id="rssTitle">RSS Providers</li>
+        <li id="The Hindu">The Hindu</li>
+        <li id="Hindustan Times">Hindustan Times</li>
+        <li id="The Times Of India">The Times Of India</li>
+        <li id="India Today">India Today</li>
+        <li id="Newyork Times">Newyork Times</li>
         </ul>
       </Col>
     </Row> 
@@ -31,3 +33,5 @@ function RssProviders(props){
 }
 
 export default RssProviders;    
+
+//onClick={handleCheck}
