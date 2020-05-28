@@ -5,6 +5,7 @@ import {
 import Category from './Category';
 import RssProviders from './RssProviders';
 import CardLayout from './Card';
+import Pagination from './Pagination';
 import Constants from '../Util/Constants';
 
 function Categories(){
@@ -18,19 +19,8 @@ function Categories(){
     const fetchRSSNews = (rss) => {
 
         let pageNum = 1;
-        let picSrcValue = "";
-        if(rss==="Hindustan Times")
-            picSrcValue = "assets/images/ht2.png";
-        if(rss==="India Today")
-            picSrcValue = "assets/images/indiatoday.png";
-        if(rss==="Times Of India")
-            picSrcValue = "assets/images/toi.png"
-        if(rss==="Newyork Times")
-            picSrcValue = "assets/images/newyt.png";
-        if(rss==="The Hindu")
-            picSrcValue = "assets/images/th.png ";
 
-        const response = fetch(`${Constants.BASEURL}/news/all/${rss}/${pageNum}`, {
+        const response = fetch(`${Constants.BASEURL}/news/rss/${rss}/${pageNum}`, {
           method: "GET",
           cache: "no-cache",
           headers: { "Content-Type": "application/json" },
@@ -42,18 +32,17 @@ function Categories(){
             let error = response.status;
             throw error;}
           }).then( object => {
-            console.log(object);
-            object.agency_logo = picSrcValue;
-            object.pic_src = picSrcValue;
             setAllNews(object);
-            console.log(object);
         });
       }
     
 
-    const fetchAllNews = () => {
-        //let pageNum = 1;
-        const response = fetch(`${Constants.BASEURL}/news/all`, {
+    const fetchAllNews = (pageNum) => {
+
+        if(pageNum=="NaN" || pageNum==null || pageNum=="")
+            pageNum = 1;
+        
+        const response = fetch(`${Constants.BASEURL}/news/all/${pageNum}`, {
         method: "GET",
         cache: "no-cache",
         headers: { "Content-Type": "application/json" },
@@ -103,6 +92,7 @@ function Categories(){
                 { allNews.map( news => <CardLayout props={news} /> )}
                 </Col> 
             </Row>
+            <Pagination clicked={fetchAllNews} props={allNews}/>
         </Container>
     );
 }

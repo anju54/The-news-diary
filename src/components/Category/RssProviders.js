@@ -7,6 +7,7 @@ import {
 function RssProviders(props){
 
   function handleCheck(e) {
+    console.log(props);
     console.log(e.target.id);  
     props.clicked(e.target.id);
   }
