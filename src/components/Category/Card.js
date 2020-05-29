@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { 
     Row,
     Card, 
-    CardImg,  
     CardBody, 
     Col, CardLink,
     CardTitle,

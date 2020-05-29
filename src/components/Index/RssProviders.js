@@ -1,8 +1,5 @@
 import React from 'react';
-import { 
-    Card, 
-    Col
-  } from 'reactstrap';
+import { Col } from 'reactstrap';
 
 function RssProviders(){
   return(

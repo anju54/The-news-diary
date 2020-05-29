@@ -1,10 +1,7 @@
 import React from 'react';
-import { 
-    Card, 
-    Col
-} from 'reactstrap';
+import { Col } from 'reactstrap';
 
-  function Category(){
+function Category(){
     return(
         <Col xs="3">
             <h3 className="block-title">

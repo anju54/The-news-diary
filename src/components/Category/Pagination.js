@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Nav, Container, Row , Col} from 'reactstrap';
+import React, { useState } from 'react';
+import { Container, Row , Col} from 'reactstrap';
 import Pagination from "react-js-pagination";
 
 const PaginationImpl = (props) => {

@@ -1,12 +1,10 @@
 import React from 'react';
 import { 
-    Row, 
     Card, 
     CardImg,  
     CardBody, 
     Col, 
-    Container
-  } from 'reactstrap';
+} from 'reactstrap';
 
 function CardLayout(props){
 

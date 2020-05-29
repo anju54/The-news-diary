@@ -20,7 +20,7 @@ function Categories(){
 
     const fetchRSSNews = (rss,pageNum) => {
 
-        if(pageNum=="NaN" || pageNum==null || pageNum=="")
+        if(pageNum==="NaN" || pageNum===null || pageNum==="")
             pageNum = 1;
 
         const response = fetch(`${Constants.BASEURL}/news/rss/${rss}/${pageNum}`, {
@@ -43,7 +43,7 @@ function Categories(){
 
     const fetchAllNews = (pageNum) => {
 
-        if(pageNum=="NaN" || pageNum==null || pageNum=="")
+        if(pageNum==="NaN" || pageNum==null || pageNum==="")
             pageNum = 1;
         
         const response = fetch(`${Constants.BASEURL}/news/all/${pageNum}`, {

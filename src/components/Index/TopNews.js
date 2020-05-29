@@ -15,7 +15,7 @@ function TopNews(){
   },[]);
 
   let fetchTopNews = () => {
-    let pageNum = 1;
+    
     const response = fetch(`${Constants.BASEURL}/news/top-news`, {
       method: "GET",
       cache: "no-cache",
