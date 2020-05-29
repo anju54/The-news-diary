@@ -25,6 +25,9 @@ function CardLayout(props){
   if(rss==="The Hindu")
     picSrcValue = "assets/images/th.png ";
 
+  if(!rss)
+    picSrcValue = "assets/images/rss.png";
+
   return(
     <Row>
       <Col class="d-flex align-items-stretch" className="cardCol" >    

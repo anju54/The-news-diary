@@ -1,29 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Nav, Container, Row , Col} from 'reactstrap';
 import Pagination from "react-js-pagination";
 
 const PaginationImpl = (props) => {
 
-  let activePage =10;
+  const [currentPage, setCurrentPage] = useState(1);
+
   function handlePageChange(pageNumber) {
     console.log(`active page is ${pageNumber}`);
     console.log(props.props);
     props.clicked(pageNumber);
-    activePage = pageNumber;
-    // this.setState({activePage: pageNumber});
+    setCurrentPage(pageNumber);
+    console.log(currentPage);
   }
 
   return (
     <Container>
       <Row>
-        <Col xs="4"></Col>
+        <Col xs="3"></Col>
         <Col xs="7">
           <Pagination
-          hideFirstLastPages
-          activePage={activePage}
-          // itemsCountPerPage={10}
-          totalItemsCount={activePage*7}
-          pageRangeDisplayed={7}
+          itemClass="page-item" // add it for bootstrap 4
+          linkClass="page-link"
+          activePage={currentPage}
+          itemsCountPerPage={10}
+          totalItemsCount={450}
+          pageRangeDisplayed={10}
           onChange={handlePageChange}
           />
         </Col>
