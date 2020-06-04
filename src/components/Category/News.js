@@ -11,10 +11,11 @@ import Constants from '../Util/Constants';
 function Categories(){
 
     const [allNews,setAllNews] = useState([]);
-    const[response,setResponse] = useState([]);
+    const [response,setResponse] = useState([]);
     const [category,setCategory] = useState();
     const [rss,setRss] = useState("");
     const [totalpage,setTotalpage] = useState(0);
+    const [activePage,setActivePage] = useState(1);
    
     useEffect( () => {
         fetchAllNews();
@@ -46,6 +47,18 @@ function Categories(){
         });
     }
 
+    const updateCategory = (category,pageNum) => {
+        setCategory(category);
+        setActivePage(1);
+        fetchCategoryNews(category,pageNum);
+    }
+
+    const updateRss = (rss,pageNum) => {
+        setRss(rss);
+        setActivePage(1);
+        fetchRSSNews(rss,pageNum);
+    }
+
     const fetchRSSNews = (rss,pageNum) => {
 
         if(pageNum=="NaN" || pageNum==null || pageNum=="")
@@ -63,7 +76,7 @@ function Categories(){
             let error = response.status;
             throw error;}
           }).then( object => {
-            setRss(rss);
+            //setRss(rss);
             setAllNews(object.rss_news[0]);
             setTotalpage(object.rss_news_count[0].numOfRecords);
         });
@@ -72,6 +85,7 @@ function Categories(){
     const fetchCategoryNews = (category1,pageNum) => {
 
         console.log("categoty news calling......");
+        console.log(allNews);
 
         if(pageNum=="NaN" || pageNum==null || pageNum==="")
             pageNum = 1;
@@ -90,7 +104,7 @@ function Categories(){
             }).then( object => {
                 var cat = "cate";
                 object[cat] = category1;
-                setCategory(category1);
+                //setCategory(category1);
                 setAllNews(object.cat_news[0]);
                 setTotalpage(object.cat_news_count[0].numOfRecords);
         });
@@ -157,12 +171,17 @@ function Categories(){
     const handlePagination = (pageNum) => {
         console.log("handle pagination called...");
         console.log(rss);
+        console.log(category);
         if(category){
+            console.log(category);
             fetchCategoryNews(category,pageNum);
+            setActivePage(pageNum);
         }else if(rss){
             fetchRSSNews(rss,pageNum);
+            setActivePage(pageNum);
         }else{
-            //getTotalPageForAll();
+            fetchAllNews(pageNum);
+            setActivePage(pageNum);
         }
     }
 
@@ -171,8 +190,8 @@ function Categories(){
         <Container>
             <Row>
                 <Col xs="2" >
-                    <Category clicked={fetchCategoryNews} />
-                    <RssProviders clicked={fetchRSSNews} />
+                    <Category clicked={updateCategory} />
+                    <RssProviders clicked={updateRss} />
                 </Col>
                 <Col xs="8" class="d-flex align-items-stretch">
                     {/* {console.log(response.allnews)} */}
@@ -183,6 +202,7 @@ function Categories(){
                 clicked={handlePagination} 
                 props={allNews}
                 totalpage={totalpage}
+                activePage={activePage}
             />
         </Container>
     );
