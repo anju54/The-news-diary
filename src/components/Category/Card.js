@@ -10,22 +10,24 @@ import {
 
 function CardLayout(props){
 
-  let picSrcValue = "";
+  //console.log(props);
+
+  //let picSrcValue = "";
   let rss = props.props.agency_title;
     
-  if(rss==="Hindustan Times")
-    picSrcValue = "assets/images/ht2.png";
-  if(rss==="India Today")
-    picSrcValue = "assets/images/indiatoday.png";
-  if(rss==="Times Of India")
-    picSrcValue = "assets/images/toi.png"
-  if(rss==="Newyork Times")
-    picSrcValue = "assets/images/newyt.png";
-  if(rss==="The Hindu")
-    picSrcValue = "assets/images/th.png ";
+  // if(rss==="Hindustan Times")
+  //   picSrcValue = "assets/images/ht2.png";
+  // if(rss==="India Today")
+  //   picSrcValue = "assets/images/indiatoday.png";
+  // if(rss==="Times Of India")
+  //   picSrcValue = "assets/images/toi.png"
+  // if(rss==="Newyork Times")
+  //   picSrcValue = "assets/images/newyt.png";
+  // if(rss==="The Hindu")
+  //   picSrcValue = "assets/images/th.png ";
 
-  if(!rss)
-    picSrcValue = "assets/images/rss.png";
+  // if(!rss)
+  //   picSrcValue = "assets/images/rss.png";
 
   return(
     <Row>
@@ -35,7 +37,7 @@ function CardLayout(props){
           <Container>
             <Row>
               <Col xs="1">
-                <img src={picSrcValue} id="rssImg"/>
+                <img src="assets/images/rss.png" id="rssImg"/>
               </Col>
               <Col xs="11">
                 <Row>

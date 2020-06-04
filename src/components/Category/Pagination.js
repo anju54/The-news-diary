@@ -8,13 +8,12 @@ const PaginationImpl = (props) => {
 
   function handlePageChange(pageNumber) {
     console.log(`active page is ${pageNumber}`);
-    console.log(props.props);
+    
     props.clicked(pageNumber);
     setCurrentPage(pageNumber);
-    console.log(currentPage);
   }
 
-  return (
+  return (   
     <Container>
       <Row>
         <Col xs="3"></Col>
@@ -24,7 +23,7 @@ const PaginationImpl = (props) => {
           linkClass="page-link"
           activePage={currentPage}
           itemsCountPerPage={10}
-          totalItemsCount={450}
+          totalItemsCount={props.totalpage}
           pageRangeDisplayed={10}
           onChange={handlePageChange}
           />
