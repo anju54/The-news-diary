@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { 
-    Row, 
-    Card, 
-    CardImg, 
-    CardBody, 
+    Row,
     Col, 
   } from 'reactstrap';
 import Constants from '../Util/Constants';

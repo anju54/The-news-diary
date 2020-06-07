@@ -11,7 +11,6 @@ import Constants from '../Util/Constants';
 function Categories(){
 
     const [allNews,setAllNews] = useState([]);
-    const [response,setResponse] = useState([]);
     const [category,setCategory] = useState();
     const [rss,setRss] = useState("");
     const [totalpage,setTotalpage] = useState(0);
@@ -21,9 +20,8 @@ function Categories(){
         fetchAllNews();
     }, []);
 
+    // This is used to fetch all the news
     const fetchAllNews = async (pageNum) => {
-
-        console.log("fetch all news calling......");
 
         if(pageNum=="NaN" || pageNum==null || pageNum==="")
             pageNum = 1;
@@ -34,7 +32,6 @@ function Categories(){
         headers: { "Content-Type": "application/json" },
         })
         .then( response => {
-            console.log(response);
             if(response.ok){
                 return response.json();
             }else{
@@ -42,23 +39,26 @@ function Categories(){
                 throw error;}
         }).then( object => {
             setAllNews(object.allnews[0]);
-            //console.log(object.total_all_news_count[0].totalpage);
             setTotalpage(object.total_all_news_count[0].totalpage);
         });
     }
 
+    // This is used to set the current/active page in pagination for specific category
     const updateCategory = (category,pageNum) => {
         setCategory(category);
         setActivePage(1);
         fetchCategoryNews(category,pageNum);
     }
 
+
+    // This is used to set the current/active page in pagination for specific rss
     const updateRss = (rss,pageNum) => {
         setRss(rss);
         setActivePage(1);
         fetchRSSNews(rss,pageNum);
     }
 
+    // This is used to fetch all the news related to RSS
     const fetchRSSNews = (rss,pageNum) => {
 
         if(pageNum=="NaN" || pageNum==null || pageNum=="")
@@ -76,15 +76,14 @@ function Categories(){
             let error = response.status;
             throw error;}
           }).then( object => {
-            //setRss(rss);
             setAllNews(object.rss_news[0]);
             setTotalpage(object.rss_news_count[0].numOfRecords);
         });
     }
     
+    // This is used to fetch all the news for specific category
     const fetchCategoryNews = (category1,pageNum) => {
 
-        console.log("categoty news calling......");
         console.log(allNews);
 
         if(pageNum=="NaN" || pageNum==null || pageNum==="")
@@ -110,70 +109,9 @@ function Categories(){
         });
     }
 
-    const getTotalPageForCategory = (category) => {
-
-        console.log("calling total page",category);
-
-        const response = fetch(`${Constants.BASEURL}/news/total-page/category/${category}`, {
-            method: "GET",
-            cache: "no-cache",
-            headers: { "Content-Type": "application/json" },
-            })
-            .then( response => {
-              if(response.ok){
-              return response.json();
-              }else{
-              let error = response.status;
-              throw error;}
-            }).then( object => {
-                console.log(object);
-              setTotalpage(object);
-        });
-    }
-
-    const getTotalPageForRss = (rss) => {
-
-        const response = fetch(`${Constants.BASEURL}/news/total-page/rss/${rss}`, {
-            method: "GET",
-            cache: "no-cache",
-            headers: { "Content-Type": "application/json" },
-            })
-            .then( response => {
-              if(response.ok){
-              return response.json();
-              }else{
-              let error = response.status;
-              throw error;}
-            }).then( object => {
-              setTotalpage(object);
-        });
-    }
-
-    const getTotalPageForAll = () => {
-        console.log("calling total page for all");
-        const response = fetch(`${Constants.BASEURL}/news/page-count`, {
-            method: "GET",
-            cache: "no-cache",
-            headers: { "Content-Type": "application/json" },
-            })
-            .then( response => {
-              if(response.ok){
-              return response.json();
-              }else{
-              let error = response.status;
-              throw error;}
-            }).then( object => {
-                console.log(object);
-                setTotalpage(object);
-        });
-    }
-
+    // This is used to call the news api when use click on pagination
     const handlePagination = (pageNum) => {
-        console.log("handle pagination called...");
-        console.log(rss);
-        console.log(category);
         if(category){
-            console.log(category);
             fetchCategoryNews(category,pageNum);
             setActivePage(pageNum);
         }else if(rss){
@@ -194,8 +132,7 @@ function Categories(){
                     <RssProviders clicked={updateRss} />
                 </Col>
                 <Col xs="8" class="d-flex align-items-stretch">
-                    {/* {console.log(response.allnews)} */}
-                    { allNews.map( news => <CardLayout props={news}  totalpage={totalpage} /> )}
+                    { allNews.map( news => <CardLayout props={news} key={news.agency_news_id} totalpage={totalpage} /> )}
                 </Col> 
             </Row>
             <Pagination 

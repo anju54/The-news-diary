@@ -3,13 +3,10 @@ import {
     Row, 
     Col
 } from 'reactstrap';
-import News from '../Category/News';
-import Constants from '../Util/Constants';
 
 function Category(props){
 
-    function handleCheck(e) {
-        console.log(e.target.id);  
+    function handleCheck(e) {  
         props.clicked(e.target.id);
     }
 

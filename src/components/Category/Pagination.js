@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Row , Col} from 'reactstrap';
 import Pagination from "react-js-pagination";
 
+/**
+ * This used for pagination UI
+ * @param {} props 
+ */
 const PaginationImpl = (props) => {
   
-  console.log(props);
-  //const [currentPage, setCurrentPage] = useState(1);
-
   function handlePageChange(pageNumber) {
-    console.log(`active page is ${pageNumber}`);
     props.clicked(pageNumber);
-    //setCurrentPage(pageNumber);
   }
 
   return (   
@@ -31,7 +30,6 @@ const PaginationImpl = (props) => {
       </Row>
     </Container>
   );
-
 }
 
 export default PaginationImpl;

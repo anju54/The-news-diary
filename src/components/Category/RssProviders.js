@@ -4,15 +4,15 @@ import {
     Col
   } from 'reactstrap';
 
+/**
+ * This is showing list of RSS in UI
+ * @param {} props 
+ */
 function RssProviders(props){
 
-  function handleCheck(e) {
-    console.log(props);
-    console.log(e.target.id);  
+  function handleCheck(e) { 
     props.clicked(e.target.id);
   }
-  
-  //document.getElementById("rssTitle").onClick() = function() {return false}
 
   return(
     <Row>
@@ -33,6 +33,4 @@ function RssProviders(props){
   )
 }
 
-export default RssProviders;    
-
-//onClick={handleCheck}
+export default RssProviders;
