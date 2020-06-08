@@ -18,8 +18,8 @@ function Category(props){
                     onClick={handleCheck} 
                 >
                 <li className="disabled">Categories</li>
-                <li>All</li>
-                <li id="Technology">Technology</li>
+                <li id="All">All</li>
+                <li id="Business">Business</li>
                 <li id="Sports">Sports</li>
                 <li id="Top Stories">Top Story</li>
                 <li id="The Big Story">The Big Story</li>

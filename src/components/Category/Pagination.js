@@ -18,6 +18,8 @@ const PaginationImpl = (props) => {
         <Col xs="3"></Col>
         <Col xs="7">
           <Pagination
+          //hideFirstLastPage
+          hideNavigation  // Hide navigation buttons (prev page, next page)
           itemClass="page-item" // add it for bootstrap 4
           linkClass="page-link"
           activePage={props.activePage}

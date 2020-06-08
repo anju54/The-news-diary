@@ -8,12 +8,11 @@ function Category(){
                 <span>Category</span>
             </h3>
             <ul className="list-block list-li-ptb-15 list-btm-border-white bg-primary text-center" id="listItem">
-            <li><b>All</b></li>
-            <li><b>Technology</b></li>
-            <li><b>Sports</b></li>
-            <li><b>Bolywood</b></li>
-            <li><b>Criket</b></li>
-            <li><b>Holywood</b></li>
+                <li id="All">All</li>
+                <li id="Business">Business</li>
+                <li id="Sports">Sports</li>
+                <li id="Top Stories">Top Story</li>
+                <li id="The Big Story">The Big Story</li>
             </ul>
         </Col>
     );

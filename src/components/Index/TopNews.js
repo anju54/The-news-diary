@@ -26,7 +26,8 @@ function TopNews(){
           return response.json();
         }else{
           let error = response.status;
-          throw error;}
+          throw error;
+        }
     }).then( object => setTopNews(object) );
   }
 
@@ -34,7 +35,7 @@ function TopNews(){
     <div>
       <Container>
         <Row>
-          {topNews.map(news =><CardLayout topNews={news} /> )}
+          {topNews.map(news =><CardLayout key={news.agency_news_id} topNews={news} /> )}
         </Row>
       </Container>
     </div>

@@ -12,21 +12,13 @@ class Main extends Component {
   constructor(props){
 
     super(props);
-
     this.state ={
-     
     };
-
   }
 
   render(){
-
     const HomePage = ()=> {
-      return (
-        <Home 
-        
-        />
-      )
+      return ( <Home /> )
     }
          
     return (
@@ -41,7 +33,6 @@ class Main extends Component {
       </div>
     );
   }
- 
 }
 
 export default Main;

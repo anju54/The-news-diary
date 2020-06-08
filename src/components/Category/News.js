@@ -45,11 +45,16 @@ function Categories(){
 
     // This is used to set the current/active page in pagination for specific category
     const updateCategory = (category,pageNum) => {
-        setCategory(category);
-        setActivePage(1);
-        fetchCategoryNews(category,pageNum);
+        
+        if(category=="All"){
+            fetchAllNews();
+            setActivePage(1);
+        }else{
+            setCategory(category);
+            setActivePage(1);
+            fetchCategoryNews(category,pageNum);
+        }
     }
-
 
     // This is used to set the current/active page in pagination for specific rss
     const updateRss = (rss,pageNum) => {
@@ -112,6 +117,7 @@ function Categories(){
     // This is used to call the news api when use click on pagination
     const handlePagination = (pageNum) => {
         if(category){
+            console.log(category);
             fetchCategoryNews(category,pageNum);
             setActivePage(pageNum);
         }else if(rss){

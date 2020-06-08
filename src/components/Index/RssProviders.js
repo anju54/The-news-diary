@@ -8,12 +8,11 @@ function RssProviders(){
           <span>RSS Providers</span>
       </h3>
       <ul className="list-block list-li-ptb-15 list-btm-border-white bg-primary text-center" id="listItem">
-      <li><b>Hindustan Times</b></li>
-      <li><b>The Times Of India</b></li>
-      <li><b>The Hindu</b></li>
-      <li><b>Economics Times</b></li>
-      <li><b>News 24</b></li>
-      <li><b>Newyork Times</b></li>
+        <li id="The Hindu">The Hindu</li>
+        <li id="Hindustan Times">Hindustan Times</li>
+        <li id="Times Of India">Times Of India</li>
+        <li id="India Today">India Today</li>
+        <li id="Newyork Times">Newyork Times</li>
       </ul>
     </Col>
   )
