@@ -22,7 +22,6 @@ function Home(props){
         </Row>
       </div>
       <br></br> 
-      {/* <CategoryNews /> */}
     </div> 
   )
 

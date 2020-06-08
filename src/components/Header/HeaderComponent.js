@@ -67,24 +67,24 @@ class Header extends Component{
     render(){
         return(
             <>
-                <Navbar dark expand="md" className="navbarStyle">
+                <Navbar expand="md" className="navbarStyle">
                     <Container>
                         <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand className="mr-auto serif" href="/">
-                            <img src="assets/images/rss.png" height="50" width="30"
+                        <NavbarBrand className="mr-auto customText" id="logoTag" href="/">
+                            <img src="assets/images/rss.png"
                             alt="" id="logo" />
-                            The-News-Hub
+                            rss-reader
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                        <Nav navbar>
+                        <Nav navbar className="navBarStyle">
                             <NavItem>
                                 <NavLink className="nav-link serif" to="/home">
-                                    <span className="fa fa-info fa-lg"></span> Home
+                                    <span className="fa fa-home fa-lg"></span> Home
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink className="nav-link serif" to="/categories">
-                                    <span className="fa fa-list fa-lg"></span> Categories
+                                    <span className="fa fa-list fa-lg"></span> News
                                 </NavLink>
                             </NavItem>
                             
@@ -94,16 +94,17 @@ class Header extends Component{
                                 </NavLink>
                             </NavItem>
                         </Nav>
-                        <Nav className="ml-auto" navbar>
+                        {/* <Nav className="ml-auto" navbar>
                             <NavItem>
                                 <Button outline onClick={this.toggleModel}>
                                     <span className="fa fa-sign-in fa-lg serif"></span>Login
                                 </Button>
                             </NavItem>
-                        </Nav>
+                        </Nav> */}
                         </Collapse>
                     </Container>
                 </Navbar>
+                <hr className="customeHr"></hr>
                 {/* <Jumbotron>
                     <Container>
                         <div className="row row-header">

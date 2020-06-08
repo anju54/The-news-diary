@@ -13,16 +13,16 @@ function Category(props){
     return(
         <Row>
             <Col className="newsCard">
-                <ul className="list-block list-li-ptb-10 list-btm-border-white bg-primary text-center" 
+                <ul className="list-block list-li-ptb-10 list-btm-border-white  text-center" 
                     id="listItem"
                     onClick={handleCheck} 
                 >
-                <li className="disabled">Categories</li>
-                <li id="All">All</li>
-                <li id="Business">Business</li>
-                <li id="Sports">Sports</li>
-                <li id="Top Stories">Top Story</li>
-                <li id="The Big Story">The Big Story</li>
+                <li className="disabled" >Categories</li>
+                <li id="All" className="customText">All</li>
+                <li id="Business" className="customText">Business</li>
+                <li id="Sports" className="customText">Sports</li>
+                <li id="Top Stories" className="customText">Top Story</li>
+                <li id="The Big Story" className="customText">The Big Story</li>
                 </ul>
             </Col>
         </Row>

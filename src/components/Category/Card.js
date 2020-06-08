@@ -24,11 +24,11 @@ function CardLayout(props){
               <Col xs="11">
                 <Row>
                   <Col xs="12">
-                  <CardTitle>{props.props.title}</CardTitle>
+                  <CardTitle className="customText">{props.props.title}</CardTitle>
                   </Col>
                   <Row>
                     <Col xs="12">
-                  <CardSubtitle>{props.props.agency_title}</CardSubtitle></Col>
+                  <CardSubtitle className="customText">{props.props.agency_title}</CardSubtitle></Col>
                   </Row>
                 </Row>
               </Col>
@@ -36,8 +36,8 @@ function CardLayout(props){
           </Container>
         </CardBody>
         <CardBody>
-          <CardText>{props.props.link}</CardText>
-           <CardLink href={props.props.link}>Click here for full article</CardLink> 
+          <CardText className="customText">{props.props.link}</CardText>
+           <CardLink href={props.props.link} className="customText" target="_blank" >Click here for full article</CardLink> 
         </CardBody>
       </Card>
       </Col>

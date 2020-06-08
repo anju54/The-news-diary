@@ -14,7 +14,7 @@ function CardLayout(props){
             <Card className="topNewsCard">
                 <CardImg top src={props.topNews.pic_src} alt=""></CardImg>
                 <CardBody>
-                    <a href={props.topNews.link}>
+                    <a href={props.topNews.link} className="customText">
                     {props.topNews.title}
                     </a>
                 </CardBody>

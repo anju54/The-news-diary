@@ -133,6 +133,7 @@ function Categories(){
         
         <Container>
             <Row>
+                <Col xs="1"></Col>
                 <Col xs="2" >
                     <Category clicked={updateCategory} />
                     <RssProviders clicked={updateRss} />

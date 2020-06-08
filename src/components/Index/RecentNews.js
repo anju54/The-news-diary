@@ -35,7 +35,7 @@ function RecentNews(){
   return(
     <Col xs="6">
       <h3 className="block-title">
-      <span>The Big Story</span>
+      <span className="customText">The Big Story</span>
       </h3>
       <Row>
       { bigStory.map( news => <CardForRecentNews key={news.agency_news_id} news={news} /> )} 

@@ -6,7 +6,7 @@ function CardHeading(props){
   return(
     <>
       <Col xs="12">
-        <h6 className="p-title">
+        <h6 className="p-title" className="customText">
         {(props.props)}
         </h6>
       </Col>

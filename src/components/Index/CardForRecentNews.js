@@ -14,7 +14,7 @@ function CardForRecentNews(props){
             <Card style={{height:"200px"}} >
                 <CardImg top src={props.news.pic_src} alt=""></CardImg>
                 <CardBody>
-                    <a href={props.news.link}>
+                    <a href={props.news.link} className="customText">
                     {props.news.title}
                     </a>
                 </CardBody>
